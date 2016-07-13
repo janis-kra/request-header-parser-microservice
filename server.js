@@ -11,19 +11,9 @@ app.get('/', function (req, res) {
   const userAgent = softwareRegexp
     .exec(req.header('User-Agent'))[0]
     .slice(1, -1);
-  const ips = [
-    'HTTP_CLIENT_IP',
-    'HTTP_X_FORWARDED_FOR',
-    'HTTP_X_FORWARDED',
-    'HTTP_X_CLUSTER_CLIENT_IP',
-    'HTTP_FORWARDED_FOR',
-    'HTTP_FORWARDED',
-    'REMOTE_ADDR'
-  ].map(function (header) {
-    return req.header(header);
-  });
+  const ip = req.header('x-forwarded-for');
   res.send({
-    ipaddress: JSON.stringify(ips) || 'IP not found',
+    ipaddress: ip || 'IP not found',
     language: lang || 'lang not found',
     software: userAgent || 'OS not found'
   });
@@ -31,4 +21,4 @@ app.get('/', function (req, res) {
 
 app.listen(PORT, function () {
   console.log('Request Header Parser Microservice running on port ' + PORT);
-})
+});
