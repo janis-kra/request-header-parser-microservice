@@ -1,0 +1,23 @@
+{
+  "name": "request-header-parser-microservice",
+  "version": "1.0.0",
+  "description": "Request Header Parser Microservice, as in https://www.freecodecamp.com/challenges/request-header-parser-microservice",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janis-kra/request-header-parser-microservice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/janis-kra/request-header-parser-microservice/issues"
+  },
+  "homepage": "https://github.com/janis-kra/request-header-parser-microservice#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
